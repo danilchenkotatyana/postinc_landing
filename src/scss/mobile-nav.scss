@@ -1,0 +1,82 @@
+.mobile-nav {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+
+    background-color: var(--bg-color);
+    background: url(.png), linear-gradient(170.21deg, rgba(0, 0, 0, 0.7) -4.52%, rgba(0, 0, 0, 0.3) 113.08%);
+    background-blend-mode: overlay, normal;
+    backdrop-filter: blur(30px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    opacity: 0;
+    transform: translateX(-100%);
+
+    @include media($--lg, minw) {
+        display: none;
+    }
+
+    &.active {
+        opacity: 1;
+        transform: translateX(0);
+        animation: mobileMenu .6s linear;
+        animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+
+        @include media($--lg, minw) {
+            display: none;
+        }
+    }
+
+    &.hide {
+        animation: mobileMenuOut .3s linear;
+        animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    }
+
+    .download-btn {
+        margin-bottom: 100px;
+    }
+
+    .nav {
+        gap: 38px;
+        flex-direction: column;
+
+        &__item {
+            font-size: 20px;
+        }
+    }
+
+    .header__container {
+        padding: 0 6%;
+    }
+
+}
+
+.close-icon {
+    display: block;
+    padding: 16px;
+    margin-right: -16px;
+
+    @include media($--lg, minw) {
+        display: none;
+    }
+}
+
+@keyframes mobileMenu {
+    0% {transform: translateX(-100%);opacity: 0;}
+    20% {transform: translateX(-80%);opacity: 1;}
+    80% {transform: translateX(0);opacity: 1;}
+    90% {transform: translateX(-20px);opacity: 1;}
+    100% {transform: translateX(0);opacity: 1;}
+}
+
+@keyframes mobileMenuOut {
+    0% {transform: translateX(0); display:flex;opacity: 1;}
+    90% {transform: translateX(-90%); display:flex;opacity: 1;}
+    100% {transform: translateX(-100%); display:flex;opacity: 0;}
+}

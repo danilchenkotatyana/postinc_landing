@@ -1,0 +1,25 @@
+@mixin media($media, $val) {
+  @if $val == maxw {
+    @media only screen and (max-width: $media) {
+      @content;
+    }
+  }
+
+  @if $val == minw {
+    @media only screen and (min-width: ($media)) {
+      @content;
+    }
+  }
+
+  @if $val == maxh {
+    @media only screen and (max-height: $media) {
+      @content;
+    }
+  }
+
+  @if $val == minh {
+    @media only screen and (min-height: ($media)) {
+      @content;
+    }
+  }
+}

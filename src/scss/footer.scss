@@ -1,0 +1,68 @@
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6% 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--grey);
+    position: relative;
+    margin-top: 80px;
+    flex-direction: column-reverse;
+
+    @include media($--sm, minw) {
+    }
+
+  @include media($--md, minw) {
+        justify-content: space-between;
+        padding-bottom: 0;
+        flex-direction: row;
+        height: 62px;
+      }
+
+  @include media($--xl, minw) {
+        padding: 0;
+      }
+
+    a {
+        color: var(--grey);
+        cursor: pointer;
+        transition: .3s;
+
+        @media (hover: hover) {
+                &:hover {
+                    color: var(--white);
+                }
+              }
+    }
+
+    .terms {
+        font-size: 17px;
+        line-height: 129%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+
+        @include media($--sm, minw) {
+            flex-direction: row;
+            gap: 24px;
+        }
+
+        a {
+            display: block;
+        }
+    }
+
+    .rights {
+        font-size: 14px;
+        line-height: 120%;
+        margin-top: 32px;
+
+        @include media($--md, minw) {
+            font-size: 17px;
+            margin-top: 0;
+          }
+    }
+}

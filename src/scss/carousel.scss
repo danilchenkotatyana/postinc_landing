@@ -1,0 +1,39 @@
+$imgGap: 24px;
+$imgWidth: 296px;
+$imgHeight: 600px;
+$sliderPadding: 60px;
+
+.carousel {
+    padding: $sliderPadding 0;
+    position: relative;
+    overflow: hidden;
+    height: calc($imgHeight + ($sliderPadding * 2));
+    width: 100vw;
+
+        transform: translate3d(0, 0, 0);
+
+    &__container {
+        display: flex;
+        gap: $imgGap;
+        flex-wrap: no-wrap;
+        width: ($imgWidth + $imgGap) * 12; // * count of images
+        position: absolute;
+        top: $sliderPadding;
+        left: 0;
+        height: 100%;
+        transform: translate3d(0, 0, 0);
+
+        animation: moveSlideshow 10s linear infinite; // speed change
+
+        img {
+            width: $imgWidth;
+            display: block;
+        }
+    }
+}
+
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-33.33333%);
+  }
+}

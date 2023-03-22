@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  www:
+    build: .
+    command: bash -c "npm start"
+    ports:
+      - 80:3000
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api-be.rule=Host(`postinc.co`)"
+      - "traefik.http.routers.api-be.entrypoints=websecure"
+      - "traefik.http.routers.api-be.tls.certresolver=myresolver"
+

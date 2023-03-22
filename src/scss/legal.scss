@@ -1,0 +1,85 @@
+.legal {
+    text-align: left;
+    align-items: flex-start;
+    margin-top: 40px;
+
+    @include media($--md, minw) {
+        margin-top: 80px;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 120%;
+        text-align: left;
+        margin-bottom: 8px;
+
+        @include media($--md, minw) {
+            font-size: 64px;
+        }
+    }
+
+    h2 {
+        font-size: 28px;
+        line-height: 120%;
+        font-weight: 700;
+        margin: 34px 0 22px;
+
+        @include media($--md, minw) {
+            font-size: 36px;
+        }
+    }
+
+    p {
+        margin-block-start: 6px;
+        margin-block-end: 6px;
+        font-size: 16px;
+        line-height: 140%;
+        color: var(--grey);
+
+        @include media($--md, minw) {
+            font-size: 18px;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+
+    h3 {
+        margin: 6px 0 10px;
+    }
+
+    table {
+        table-layout: fixed;
+        margin: 14px 0;
+    }
+
+    th {
+        text-align: center;
+        padding:4px;
+        color: var(--grey);
+    }
+
+    td {
+        border: 1px solid #FFF;
+        padding:4px;
+        color: var(--grey);
+    }
+
+    ul {
+        list-style-type: disc;
+        margin-left: 16px;
+        color: var(--grey);
+    }
+
+    li {
+        padding: 6px 0;
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+    strong {
+        color: var(--white);
+    }
+}

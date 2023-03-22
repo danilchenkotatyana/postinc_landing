@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// for Safari
+:focus-visible {
+  outline: none;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-size: 15px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  animation: bodyBG .25s ease-out;
+  transition: .2s;
+}
+
+img {
+  width: 100%;
+  outline: none;
+}
+
+h1,
+.h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+  color: var (--white);
+  font-size: 64px;
+  line-height: 120%;
+  text-align: center;
+  transition: .5s;
+
+  @include media($--md, minw) {
+        font-size: 72px;
+      }
+
+  @include media($--xl, minw) {
+        font-size: 96px;
+      }
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+.download-btn {
+    width: 133px;
+    color:var(--bg-color);
+    transition: .3s;
+
+    @media (hover: hover) {
+        &:hover {
+            color:var(--black-hover);
+        }
+      }
+    &:active {
+        color:var(--grey);
+    }
+
+    .header & {
+        display: none;
+
+        @include media($--lg, minw) {
+            display: block;
+        }
+    }
+}
+
+@keyframes bodyBG {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
